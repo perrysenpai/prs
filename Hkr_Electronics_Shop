@@ -10,7 +10,17 @@ keyboards: an array of integers representing keyboard prices
 drives: an array of integers representing drive prices
 b: the units of currency in Monica's budget//
 
-FUNTION SOLUTION: static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+Thoughts: tried O(n)2 coudnt submit.
+           This approach makes use of the sorting to sort the keyboards array in the reverse order and the drives array in to the ascending order.
+           While iterating we start with adding the both initial elements of each array. now if it is less tham the budget it is an acceptable solution.
+           If it is not accepted, i.e the value is greater than the budger we break the inner loop .and increment the i, while keeping the value of j same.
+           this is done because the next value of the keyboards(ith value) is going to be less than the earlier value since it is in the reverse order, so if
+           i+j was previously accepted , net will also be accepted as i will be less now if we start friom j=0 again, hence we incerement i but not j , making us go through all
+           the choices valid and get the result
+           
+           
+FUNTION SOLUTION: 
+        static int getMoneySpent(int[] keyboards, int[] drives, int b) {
         Arrays.sort(keyboards);
         Arrays.sort(drives);
         int[] keyboard=new int[keyboards.length];
