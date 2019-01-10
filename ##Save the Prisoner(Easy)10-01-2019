@@ -1,0 +1,7 @@
+https://www.hackerrank.com/challenges/save-the-prisoner/
+UnderStanding the logic:
+static int saveThePrisoner(int n, int m, int s) {
+            if((m+s-1)%n==0)
+            return n;
+            return((m+s-1)%n);    
+    }
