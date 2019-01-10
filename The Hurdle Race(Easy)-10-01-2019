@@ -1,0 +1,12 @@
+Link: https://www.hackerrank.com/challenges/the-hurdle-race/problem
+
+  static int hurdleRace(int k, int[] height) 
+   {
+        int max=height[0];
+        for(int i=1; i< height.length ;i++)
+        {
+            max=Math.max(max,height[i]);
+        }
+        
+        return (max>k)?max-k:0;
+    }
