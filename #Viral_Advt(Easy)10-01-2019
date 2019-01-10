@@ -1,0 +1,13 @@
+https://www.hackerrank.com/challenges/strange-advertising/problem
+
+static int viralAdvertising(int n) {
+        int x=5;
+        int sum=0;
+        for(int i=1; i<=n; i++)
+        {
+            int a=x/2;
+            sum=sum+a;
+            x=a*3;
+        }
+        return sum;
+    }
