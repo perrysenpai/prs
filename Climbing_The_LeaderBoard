@@ -1,0 +1,49 @@
+Link: https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
+
+Intial: Tried O(n2): TLE
+Secondary: 
+
+        static int[] climbingLeaderboard(int[] scores, int[] alice) {
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        int ar[]=new int[alice.length];
+        for(int i=0; i<scores.length; i++)  // to get unique elements
+        {
+            if(!list.contains(scores[i]))
+            list.add(scores[i]);
+        }
+        System.out.println(Arrays.toString(alice));
+        System.out.println(list);
+        int num=list.size()-1;
+        for(int i=0; i<alice.length; i++)
+        {
+            for(int j=num; j>=0; j--)
+            {   System.out.println(i+" "+j+" "+alice[i]+" "+list.get(j));
+                if(alice[i]==list.get(j))
+                {
+                    System.out.print(" Success");
+                    System.out.println();
+                    ar[i]=j+1;
+                    num=j;
+                    break;
+                }
+                else if(alice[i]<list.get(j))
+                {
+                    System.out.print(" Success");
+                    System.out.println();
+                    ar[i]=j+2;
+                    num=j;
+                    break;
+                }
+                else
+                {
+                    if(j==0 && alice[i]>list.get(j))
+                    {
+                       ar[i]=1;
+                    }
+                }
+            }
+        }
+        return ar;
+    }
+    
+    Problem: Still TLE
