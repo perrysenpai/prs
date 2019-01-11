@@ -1,0 +1,24 @@
+Link:
+https://www.hackerrank.com/challenges/anagram/problem
+
+ static int anagram(String s) {
+        if(s.length()%2!=0)
+        return -1;
+        
+        char[] a=s.substring(0,(s.length()/2)).toCharArray();
+        String b=s.substring(s.length()/2,s.length());
+
+        int num=0;
+
+       for(int i=0; i<a.length; i++)
+        {
+            char x=a[i];
+            int loc=b.indexOf(x);
+            if(loc==-1)
+            num++;
+            else
+            b=b.substring(0,loc)+b.substring(loc+1,b.length());  // check presence and if present remove that letter from string
+        }
+        
+        return num; 
+    }
