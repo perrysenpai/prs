@@ -1,0 +1,25 @@
+Link: https://www.hackerrank.com/challenges/hackerrank-in-a-string/problem
+
+static String hackerrankInString(String s) {
+        String x="hackerrank";  
+        int count=0;
+        int l=-1;
+        int num=0;
+        for(int i=0; i<x.length(); i++)
+        {
+            for(int j=num; j<s.length(); j++)
+            {
+                if(s.charAt(j)==x.charAt(i))
+                {
+                    System.out.println(j+" "+s.charAt(j));
+                    count++;
+                    num=j+1;
+                    break;
+                }
+            }     
+        }
+        System.out.println(count);
+        if(count==x.length())
+        return "YES";
+        return "NO";
+    }
