@@ -1,0 +1,25 @@
+Link:Alternating Characters
+static int alternatingCharacters(String s) {
+        int count=0;
+        int p=0;
+        
+        for(int i=1; i<s.length(); i++)
+        {
+            if(s.charAt(i)==s.charAt(i-1))
+            {
+                p++;
+            }
+            else
+            {
+                count=count+p;
+                p=0;
+            }
+            if(p==s.length()-1)
+            return p;
+
+            if(i==s.length()-1 && p!=0)
+            count=count+p;
+        }
+        System.out.println(p);
+        return count;
+    }
