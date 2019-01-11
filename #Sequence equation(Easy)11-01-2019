@@ -1,0 +1,23 @@
+Link: https://www.hackerrank.com/challenges/permutation-equation/problem
+
+static int[] permutationEquation(int[] p) {
+        int[] ar=new int[p.length];
+        for(int i=1; i<=p.length; i++)
+        {
+            for(int j=0; j<p.length; j++)
+            {
+                if(i==p[j])
+                {
+                   
+                for(int k=0; k<p.length; k++)
+                {
+                    if(p[k]==j+1)
+                    {
+                    ar[i-1]=k+1;
+                    }
+                }
+                }
+            }
+        }
+        return ar;
+    }
