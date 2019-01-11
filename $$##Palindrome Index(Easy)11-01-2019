@@ -1,0 +1,21 @@
+https://www.hackerrank.com/challenges/palindrome-index/problem
+Start from the front and end simultaneously
+
+static int palindromeIndex(String a) {
+        int x=0;
+        int y=a.length()-1;
+        while(x<y)
+        {
+            if(a.charAt(x)!=a.charAt(y))
+            {
+                if((a.charAt(x+1)==a.charAt(y)) && (a.charAt(x+2) == a.charAt(y-1)))
+                    return x;
+                else
+                    return y;
+            }
+            
+            x++;
+            y--;
+        }
+        return -1;
+    }
