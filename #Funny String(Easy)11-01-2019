@@ -1,0 +1,17 @@
+Link : https://www.hackerrank.com/challenges/funny-string/problem
+static String funnyString(String s) {
+        StringBuilder sb=new StringBuilder(s);
+        sb.reverse();
+        String rev=sb.toString();
+        int ar[]=new int[s.length()-1];
+        int arr[]=new int[s.length()-1];
+        for(int i=0; i<s.length()-1; i++)
+        {
+            ar[i]=Math.abs(s.charAt(i)-s.charAt(i+1));
+            arr[i]=Math.abs(rev.charAt(i)-rev.charAt(i+1));
+        }
+        if(Arrays.equals(ar, arr))
+        return "Funny";
+        return "Not Funny";
+
+    }
