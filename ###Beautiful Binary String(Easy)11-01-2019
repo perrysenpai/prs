@@ -1,0 +1,5 @@
+Link: https://www.hackerrank.com/challenges/beautiful-binary-string
+
+
+return (b.split("010", -1).length - 1);
+System.out.println((B.length() - B.replaceAll("010", "").length())/3);
