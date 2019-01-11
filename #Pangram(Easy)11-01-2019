@@ -1,0 +1,15 @@
+Link: https://www.hackerrank.com/challenges/pangrams/problem
+
+static String pangrams(String s) {
+        String x="abcdefghijklmnopqrstuvwxyz";
+        s=s.toLowerCase();
+        int count=0;
+        for(int i=0; i<26; i++)
+        {
+            if(s.contains(String.valueOf(x.charAt(i))))
+            count++;
+        }
+        if(count==26)
+        return "pangram";
+        return "not pangram";
+    }
