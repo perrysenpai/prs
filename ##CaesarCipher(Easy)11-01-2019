@@ -1,0 +1,29 @@
+Link: https://www.hackerrank.com/challenges/caesar-cipher-1/problem
+static String caesarCipher(String s, int k) {
+        k=k%26;
+        String a="abcdefghijklmnopqrstuvwxyz";
+        String aa=a.toUpperCase();
+        String b=a.substring(k)+a.substring(0,k);
+        String bb=b.toUpperCase();
+        String ans="";
+        for(int i=0; i<s.length(); i++)
+        {
+            if(a.contains(String.valueOf(s.charAt(i))))
+            {
+                int loc=a.indexOf(String.valueOf(s.charAt(i)));
+                ans=ans+b.charAt(loc);
+                System.out.println(ans);
+            }
+            else if(aa.contains(String.valueOf(s.charAt(i))))
+            {
+                int loc=aa.indexOf(String.valueOf(s.charAt(i)));
+                ans=ans+bb.charAt(loc);
+                System.out.println(ans);
+            }
+            else
+            ans=ans+s.charAt(i);
+
+        }
+        return ans;
+
+    }
