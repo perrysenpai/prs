@@ -1,0 +1,52 @@
+Link:https://www.hackerrank.com/challenges/gem-stones
+
+   static int gemstones(String[] arr) {
+            int count=0;
+            for(char i='a'; i<='z'; i++)
+            {   int c=0;
+                for(int j=0; j<arr.length; j++)
+                {
+                    if(arr[j].contains(String.valueOf(i)))
+                    c++;
+                }
+                if(c==arr.length)
+                count++;
+            }
+            return count;
+
+    }
+
+
+///////////////////////////////////////////   converting each string of the string array into set of characters and retaining the unique elements.
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int t=scan.nextInt();
+        String s=scan.next();
+        Set<Character> set=setConvert(s);
+        for(int i=1; i<t; i++)
+        {
+            set.retainAll(setConvert(scan.next()));
+        }
+        System.out.println(set.size());
+    }
+
+    public static Set<Character> setConvert(String s)
+    {
+        Set<Character> set=new HashSet<Character>();
+        for(char c: s.toCharArray())
+        {
+            set.add(c);
+        }
+        return set;
+    }
+}
