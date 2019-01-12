@@ -1,0 +1,14 @@
+https://www.hackerrank.com/challenges/sherlock-and-squares/problem
+ static int squares(int a, int b) {
+        int count=0;
+        double x=Math.sqrt(a);
+        double y =Math.sqrt(b);
+        System.out.println(x+" "+y);
+        int xx=(int)Math.ceil(x);
+        int yy=(int)Math.floor(y);
+        for(int i=xx; i<=yy; i++)
+        {
+           count++;
+        }
+        return count;
+    }
