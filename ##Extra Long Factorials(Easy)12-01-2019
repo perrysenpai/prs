@@ -1,0 +1,9 @@
+Link: https://www.hackerrank.com/challenges/extra-long-factorials/problem
+  static void extraLongFactorials(int n) {
+        BigInteger prod=new BigInteger("1");
+        for(int i=2; i<=n ;i++)
+        {
+            prod=prod.multiply(new BigInteger(String.valueOf(i)));
+        }
+        System.out.println(prod);
+    }
